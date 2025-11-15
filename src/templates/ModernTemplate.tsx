@@ -1,3 +1,5 @@
+// src/templates/ModernTemplate.tsx
+import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { CVData } from '../store/cvStore';
 
@@ -6,11 +8,13 @@ const styles = StyleSheet.create({
     padding: 40,
     fontFamily: 'Helvetica',
     fontSize: 10,
-    lineHeight: 1.5,
+    lineHeight: 1.6,
+    color: '#1e293b',
   },
   header: {
-    marginBottom: 20,
-    borderBottom: '2 solid #2563eb',
+    marginBottom: 25,
+    borderBottomWidth: 2,
+    borderBottomColor: '#2563eb',
     paddingBottom: 15,
   },
   headerContent: {
@@ -25,7 +29,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 5,
-    color: '#1e293b',
   },
   title: {
     fontSize: 12,
@@ -44,24 +47,25 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   section: {
-    marginBottom: 15,
+    marginBottom: 20,
   },
   sectionTitle: {
     fontSize: 14,
     fontWeight: 'bold',
     color: '#1e293b',
-    marginBottom: 8,
+    marginBottom: 10,
     textTransform: 'uppercase',
-    borderBottom: '1 solid #e2e8f0',
+    borderBottomWidth: 1,
+    borderBottomColor: '#e2e8f0',
     paddingBottom: 4,
   },
   summary: {
     fontSize: 10,
     color: '#475569',
-    lineHeight: 1.6,
+    lineHeight: 1.7,
   },
   itemContainer: {
-    marginBottom: 12,
+    marginBottom: 15,
   },
   itemHeader: {
     flexDirection: 'row',
@@ -71,7 +75,6 @@ const styles = StyleSheet.create({
   itemTitle: {
     fontSize: 11,
     fontWeight: 'bold',
-    color: '#1e293b',
   },
   itemSubtitle: {
     fontSize: 10,
@@ -86,27 +89,21 @@ const styles = StyleSheet.create({
     fontSize: 9,
     color: '#475569',
     marginTop: 4,
-    lineHeight: 1.5,
+    lineHeight: 1.6,
   },
   skillsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 8,
+    gap: 6,
   },
   skillItem: {
     backgroundColor: '#f1f5f9',
-    padding: '4 8',
+    paddingVertical: 4,
+    paddingHorizontal: 8,
     borderRadius: 4,
     fontSize: 9,
     color: '#334155',
-  },
-  twoColumn: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: 20,
-  },
-  column: {
-    flex: 1,
+    marginBottom: 4,
   },
 });
 
@@ -182,9 +179,7 @@ export const ModernTemplate = ({ data }: { data: CVData }) => {
                 {proj.technologies && (
                   <Text style={styles.contactInfo}>Technologies: {proj.technologies}</Text>
                 )}
-                {proj.link && (
-                  <Text style={styles.contactInfo}>{proj.link}</Text>
-                )}
+                {proj.link && <Text style={styles.contactInfo}>{proj.link}</Text>}
               </View>
             ))}
           </View>
@@ -226,38 +221,24 @@ export const ModernTemplate = ({ data }: { data: CVData }) => {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
+        {/* Header */}
         <View style={styles.header}>
           <View style={styles.headerContent}>
             <View style={styles.headerLeft}>
               <Text style={styles.name}>{data.personalInfo.fullName || 'Your Name'}</Text>
-              {data.personalInfo.title && (
-                <Text style={styles.title}>{data.personalInfo.title}</Text>
-              )}
-              {data.personalInfo.email && (
-                <Text style={styles.contactInfo}>{data.personalInfo.email}</Text>
-              )}
-              {data.personalInfo.phone && (
-                <Text style={styles.contactInfo}>{data.personalInfo.phone}</Text>
-              )}
-              {data.personalInfo.location && (
-                <Text style={styles.contactInfo}>{data.personalInfo.location}</Text>
-              )}
-              {data.personalInfo.linkedin && (
-                <Text style={styles.contactInfo}>{data.personalInfo.linkedin}</Text>
-              )}
-              {data.personalInfo.github && (
-                <Text style={styles.contactInfo}>{data.personalInfo.github}</Text>
-              )}
-              {data.personalInfo.website && (
-                <Text style={styles.contactInfo}>{data.personalInfo.website}</Text>
-              )}
+              {data.personalInfo.title && <Text style={styles.title}>{data.personalInfo.title}</Text>}
+              {data.personalInfo.email && <Text style={styles.contactInfo}>{data.personalInfo.email}</Text>}
+              {data.personalInfo.phone && <Text style={styles.contactInfo}>{data.personalInfo.phone}</Text>}
+              {data.personalInfo.location && <Text style={styles.contactInfo}>{data.personalInfo.location}</Text>}
+              {data.personalInfo.linkedin && <Text style={styles.contactInfo}>{data.personalInfo.linkedin}</Text>}
+              {data.personalInfo.github && <Text style={styles.contactInfo}>{data.personalInfo.github}</Text>}
+              {data.personalInfo.website && <Text style={styles.contactInfo}>{data.personalInfo.website}</Text>}
             </View>
-            {data.personalInfo.photo && (
-              <Image style={styles.photo} src={data.personalInfo.photo} />
-            )}
+            {data.personalInfo.photo && <Image style={styles.photo} src={data.personalInfo.photo} />}
           </View>
         </View>
 
+        {/* Render all sections in order */}
         {data.sectionOrder.map((section) => renderSection(section))}
       </Page>
     </Document>

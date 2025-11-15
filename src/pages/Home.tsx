@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { FileText, Zap, Download, Smartphone, Sparkles, ArrowRight, Star } from 'lucide-react';
+import { FileText, Zap, Download, Smartphone, ArrowRight } from 'lucide-react';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -16,10 +16,7 @@ export const Home = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Hero Section */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-6 border border-green-200">
-            <Sparkles className="w-5 h-5 text-green-600" />
-            <span className="text-sm font-semibold text-gradient">AI-Powered CV Builder</span>
-          </div>
+          
           
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
             <span className="bg-gradient-to-r from-blue-600 via-green-600 to-teal-600 bg-clip-text text-transparent">
@@ -50,25 +47,7 @@ export const Home = () => {
           </div>
 
           {/* Stats */}
-          <div className="flex items-center justify-center gap-8 mt-12">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gradient">10K+</div>
-              <div className="text-sm text-gray-600">Resumes Created</div>
-            </div>
-            <div className="w-px h-12 bg-gray-300"></div>
-            <div className="text-center">
-              <div className="flex items-center gap-1 justify-center mb-1">
-                <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                <span className="text-3xl font-bold text-gradient">4.9</span>
-              </div>
-              <div className="text-sm text-gray-600">User Rating</div>
-            </div>
-            <div className="w-px h-12 bg-gray-300"></div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gradient">100%</div>
-              <div className="text-sm text-gray-600">Free Forever</div>
-            </div>
-          </div>
+          
         </div>
 
         {/* Features Grid */}
@@ -185,7 +164,6 @@ export const Home = () => {
               onClick={() => navigate('/builder')}
               className="group px-10 py-5 bg-gradient-to-r from-blue-600 to-green-600 text-white text-xl font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 flex items-center gap-3 mx-auto"
             >
-              <Sparkles className="w-6 h-6" />
               Get Started Free
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </button>
