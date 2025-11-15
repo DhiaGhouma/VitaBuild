@@ -1,4 +1,4 @@
-![VitaBuild Logo](src\assets\VitaBuildLogo.png)
+![VitaBuild Logo](https://github.com/DhiaGhouma/VitaBuild/blob/master/src/assets/VitaBuildLogo.png)
 
 # VitaBuild - Professional CV Builder
 
