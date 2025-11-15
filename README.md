@@ -108,7 +108,7 @@ License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Support
-For support, email dhia.ghouma@example.com or connect with me on LinkedIn.
+For support, email ghoumadhia01@gmail.com or connect with me on LinkedIn.
 
 Built with ❤️ by Dhia Ghouma using React and modern web technologies.
 
