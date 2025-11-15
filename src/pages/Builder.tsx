@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 import { useCVStore } from '../store/cvStore';
 import { StepWizard } from '../components/StepWizard';

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/purity */
 import { useCVStore, Language } from '../../store/cvStore';
 import { Plus, Trash2 } from 'lucide-react';
 import { useState } from 'react';

@@ -11,11 +11,13 @@ export const PersonalInfoStep = () => {
     defaultValues: cvData.personalInfo,
   });
 
-  const formData = watch();
-
+  // Update store on every change without debounce for smooth preview
   useEffect(() => {
-    setPersonalInfo(formData);
-  }, [formData, setPersonalInfo]);
+    const subscription = watch((value) => {
+      setPersonalInfo(value);
+    });
+    return () => subscription.unsubscribe();
+  }, [watch, setPersonalInfo]);
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

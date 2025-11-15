@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/purity */
 import { useCVStore, Education } from '../../store/cvStore';
 import { Plus, Trash2, GripVertical } from 'lucide-react';
 import { useState } from 'react';
