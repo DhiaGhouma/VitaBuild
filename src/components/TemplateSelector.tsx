@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useCVStore } from '../store/cvStore';
 import { Check, Sparkles, Star, Zap } from 'lucide-react';
 import { memo } from 'react';

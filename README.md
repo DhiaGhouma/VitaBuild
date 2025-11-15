@@ -1,4 +1,4 @@
-![VitaBuild Logo](C:\Users\DELL\VitaApp\src\assets\VitaBuildLogo.png)
+![VitaBuild Logo](src\assets\VitaBuildLogo.png)
 
 # VitaBuild - Professional CV Builder
 
